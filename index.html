@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pricing Calculator</title>
+	 <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/print.min.css" rel="stylesheet">
+    <!-- Main CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	</style>
+
+</head>
+<body>
+
+	<div class="container clearboth">
+		<div class="row">
+			<h1 class="text-center">Pricing Calculator</h1>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row price_container">
+			<form id="priceCalcForm">
+				<div class="input_field col-md-12">
+					<label>
+						List Price A <span class="red"> * </span>
+					</label>
+					<input type="number" id="list_price_a" class="number_req form-control list_price" placeholder="List Price A" name ="list_price_a" value="" required="required"/>
+				</div>
+				<div class="input_field col-md-12">
+					<label>
+						List Price B
+					</label>
+					<input type="number" id="list_price_b" class="number_req form-control list_price" placeholder="List Price B" name ="list_price_b"/>
+				</div>
+				<div class="input_field col-md-12">
+					<label>
+						List Price C
+					</label>
+					<input type="number" id="list_price_c" class="number_req form-control list_price" placeholder="List Price C" name ="list_price_c"/>
+				</div>
+		
+				<div class="select_field col-md-12 main_units">
+					<label>
+						Vendor
+					</label>
+					<select id="main_unit" name ="main_unit" required="required">
+						<option name="" value="">Please Select Vendor</option>
+						<option name="" value="0.25" data-upcharge="100" > CNC Cabinetry </option>
+						<option name="" value="0.35" data-upcharge="100"> CNG Cabinets </option>
+						<option name="" value="0.28" data-upcharge="100"> Cubitac Cabinet </option>
+						<option name="" value="0.349" data-upcharge="100"> Fabuwood </option>
+						<option name="" value="0.42" data-upcharge="100"> Golden Home </option>
+						<option name="" value="0.22" data-upcharge="100"> Adornus </option>
+						<option name="" value="0.371" data-upcharge="100"> DC cabinetry </option>
+						<option name="" value="0.407" data-upcharge="100"> Executive Cabinet </option>
+						<option name="" value="0.48" data-upcharge="100"> Bernier Cabinet </option>
+						<option name="" value="0.5" data-upcharge="100"> HansKrug </option>
+					</select>
+					
+					<label>
+						Discount
+					</label>
+					<select id="discount" name ="discount">
+						<option name="" value="">Please Select Discount</option>
+						<option name="" value="5"> 1 </option>
+						<option name="" value="10"> 2 </option>
+						<option name="" value="15"> 3 </option>
+						<option name="" value="20"> 4 </option>
+						<option name="" value="25"> 5 </option>
+					</select>								
+				</div>
+
+				<div class="button_field">
+					<input type="submit" id="price_calc_btn" type="button" class="btn btn-primary" value="calculate">
+				</div>
+					
+			</form>	
+			<table class="table table-bordered" id="resultsTable">
+					<tr>
+						<th scope="row" class="thead-dark">Total Price</th>
+						<td id="totalCost"> - </td>
+					</tr>
+					<tr>
+						<th scope="row" class="thead-dark">Client Price</th>
+						<td id="clientPrice"> - </td>
+					</tr>
+					<tr>
+						<th scope="row" class="thead-dark">Profit</th>
+						<td id="profit"> - </td>
+					</tr>
+					<br/>
+					<tr>
+						<td> </td>
+						<td><input type="button" id="cmd" type="button" class="btn btn-primary" value="Print"></td>
+					</tr>
+					
+					
+			</table>	
+		</div>
+	</div>
+	
+	
+	<div id="editor">
+	
+		<style> 
+			#editor{
+				padding:20px;
+				max-width:600px;
+				margin:20px auto;
+			}
+			#editor h2{
+				text-align:center;
+				font-size:24px;
+				border-top:2px solid #000;
+				border-bottom:2px solid #000;
+				padding:10px 0;
+				margin:10px 0;
+			}
+			#editor ul li{
+				padding:12px 10px;
+				font-size:16px;
+			}
+			#editor .text-bold{
+				font-weight:bold;
+			}
+			#editor .text-center{
+				text-align:center;
+			}
+			#editor .text-right{
+				text-align:right;
+			}
+			#editor .text-left{
+				text-align:left;
+			}
+			#editor table {  
+				font-family: arial, sans-serif;  
+				border-collapse: collapse;  
+				width: 100%;  
+				border:2px solid #000;
+				margin:10px 10px;
+			}  
+	  
+			#editor td, #editor th {  
+				border: 1px solid #dddddd;  
+				text-align: left;  
+				padding: 12px;  
+				font-size:16px;
+				width:50%;
+			}  
+	  
+			#editor tr:nth-child(even) {  
+				background-color: rgb(222,232,236);  
+			}  
+			/*
+			#editor table, #totalcartprinttop {page-break-after: always;}
+			@media print {
+			  #editor table {page-break-after: always;}
+			}
+			*/
+		</style> 
+		<h2>Input Data</h2>
+		<br/>
+		<table>
+			<tr>
+				<td >List Price A</td>
+				<td id="print_list_price_a"> - </td>
+			</tr>
+			<tr>
+				<td >List Price B</td>
+				<td id="print_list_price_b"> - </td>
+			</tr>
+			<tr>
+				<td >List Price C</td>
+				<td id="print_list_price_c"> - </td>
+			</tr>
+			<tr>
+				<td >Vendor</td>
+				<td id="print_vendor"> - </td>
+			</tr>
+			<tr>
+				<td >Discount</td>
+				<td id="print_discount"> 0 %</td>
+			</tr>
+		</table>
+		<br/>
+		<h2>Result</h2>
+		<br/>
+		<table>
+			<tr>
+				<th scope="row" class="thead-dark">Total Price</th>
+				<td id="print_totalCost"> - </td>
+			</tr>
+			<tr>
+				<th scope="row" class="thead-dark">Client Price</th>
+				<td id="print_clientPrice"> - </td>
+			</tr>
+			<tr>
+				<th scope="row" class="thead-dark">Profit</th>
+				<td id="print_profit"> - </td>
+			</tr>
+		</table>
+		<!-- don't delete this -->
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/print.min.js"></script>
+	<script src="js/jquery_validate.js"></script>		
+	<script src="js/calc_main.js"></script>
+	 	 
+	<script>
+		$(document).ready(function(){
+			$('#cmd').click(function () {   
+				printJS('editor', 'html');								
+			});				 
+		});	
+	 </script>
+	 
+	
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+
+/*--===== General Style =====--*/
+body{
+	background:#ececec;
+	color:#000;
+}
+.price_container{
+	max-width:400px;
+	margin:0 auto;
+}
+p,span,a,label,li, input::placeholder{
+	color:#000;
+}
+.input_field{
+	padding:15px 0;
+}
+input,select{
+	max-width:100%;
+}
+input,select{
+    padding: 12px;
+	border-radius:5px;
+	height: auto;
+}
+input.form-control, select.form-control{
+	height: auto;
+    padding: 12px;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+h1{
+	color:#000;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+	font-weight:bold;
+	padding:0 10px;
+    text-align: left;
+	
+}
+
+.error {
+    clear: both;
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+}
+.red, .error{
+	color:red;
+}
+
+td, th {
+    padding: 5px 20px;
+    text-align: center;
+}
+table{
+	background:#fff;
+	text-align:left;
+}
+th, td {
+    vertical-align: middle;
+}
+td{
+	text-align:left;
+	padding-left:15px;
+}
+th.thead-dark {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #454d55;
+    text-align: left;
+	max-width: 100px;
+}
+.text-bold{
+	font-weight:bold;
+}
+.text-center{
+	text-align:center;
+}
+.text-right{
+	text-align:right;
+}
+.text-left{
+	text-align:left;
+}
+/*-- specific styles --*/
+
+
+div#container_rows {
+    padding-top: 20px;
+}
+
+h1{
+	margin: 10px auto;
+}
+h1.text-center::after {
+    text-align: center;
+    content: ' ';
+    margin: 12px auto 0;
+    width: 50px;
+    display: block;
+    height: 2px;
+    border-bottom: 2px solid #bf3131;
+}
+h2{
+	text-align:center;
+	font-size:18px;
+	border-top:2px solid #000;
+	border-bottom:2px solid #000;
+	padding:10px 0;
+}
+form{
+	padding:15px 0 25px;
+	margin: 0 auto;
+}
+.input_field, .select_field {
+	width: 100%;
+    padding: 0;
+    margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #a83334;
+    opacity: 1;
+    color: #000;
+    border: 0;
+    cursor: not-allowed;
+}
+select, #cmd{
+	width:100%;
+}
+#resultsTable{
+	display:none;
+}
+#editor{
+	display:none;
+}
