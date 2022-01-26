@@ -62,9 +62,9 @@ $(document).ready(function(){
 				
 				let profit = round_2_digits(clientPrice - totalCost);
 				
-				$("#totalCost, #print_totalCost").text(totalCost);
-				$("#clientPrice, #print_clientPrice").text(clientPrice);
-				$("#profit, #print_profit").text(profit);
+				$("#totalCost, #print_totalCost").text("$ " + totalCost);
+				$("#clientPrice, #print_clientPrice").text("$ " + clientPrice);
+				$("#profit, #print_profit").text("$ " + profit);
 				
 				$("#resultsTable").show();
 				
@@ -72,9 +72,9 @@ $(document).ready(function(){
 					scrollTop: $("#resultsTable").offset().top
 				}, 1000);
 				
-				$("#print_list_price_a").text(list_price_a);
-				$("#print_list_price_b").text(list_price_b);
-				$("#print_list_price_c").text(list_price_c);
+				$("#print_list_price_a").text("$ " + list_price_a);
+				$("#print_list_price_b").text("$ " + list_price_b);
+				$("#print_list_price_c").text("$ " + list_price_c);
 				$("#print_vendor").text( $('#main_unit option:selected').text() );
 				$("#print_discount").text( discount * 100 + " % " );
 				

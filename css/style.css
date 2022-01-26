@@ -1,7 +1,7 @@
 
 /*--===== General Style =====--*/
 body{
-	background:#ececec;
+	background:#eeeeef;
 	color:#000;
 }
 .container{
@@ -29,10 +29,13 @@ input,select{
 	border-radius:5px;
 	height: auto;
 	max-width:100%;
+	border-radius:0;
 }
 input.form-control, select.form-control{
 	height: auto;
     padding: 12px;
+	color:#231f20;
+	
 }
 * {
     padding: 0;
@@ -177,10 +180,12 @@ select, #cmd{
 }
 .input_field_n_dollar input.form-control{
 	padding-left: 50px;
+	color:#231f20;
 }
 .input_field_n_dollar input.form-control,.input_field_n_dollar select.form-control,.input_field_n_dollar .dollar_sign{
 	height: 45px;
 	line-height: 45px;
+	border-radius:0;
 }
 .btn.btn-primary{
 	padding: 12px 20px;
