@@ -5,6 +5,9 @@ $(document).ready(function(){
 			function round_2_digits(num1){
 				return Math.round( parseFloat(num1) * 100 ) / 100;
 			}
+			function numberWithCommas(x) {
+				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			}
 			
 			var priceFieldHtml = '<div class="row input_field">' + 
 					'<div class="col-md-6">' + 
@@ -101,7 +104,7 @@ $(document).ready(function(){
 					clientPrice += round_2_digits( price + (price * upCharge) - (price * discount) );
 					
 					print_input_data += '<tr><td>' + $(this).parent().parent().parent().find('.description').val() + ' </td>';
-					print_input_data += '<td> $ ' + price + ' </td></tr>';
+					print_input_data += '<td> $ ' + numberWithCommas(price) + ' </td></tr>';
 					//console.log($(this).parent().parent().parent().find('.description').val());
 				});
 				
@@ -109,10 +112,10 @@ $(document).ready(function(){
 				print_input_data += '<td>' + $('#main_unit option:selected').text() + ' </td></tr>';
 				
 				print_input_data += '<tr><td> Shipping </td>';
-				print_input_data += '<td> $ ' + shipping + ' </td></tr>';
+				print_input_data += '<td> $ ' + numberWithCommas(shipping) + ' </td></tr>';
 				
 				print_input_data += '<tr><td> Surcharge </td>';
-				print_input_data += '<td> $ ' + surcharge + ' </td></tr>';
+				print_input_data += '<td> $ ' + numberWithCommas(surcharge) + ' </td></tr>';
 				
 				print_input_data += '<tr><td> Discount </td>';
 				print_input_data += '<td>' + discount * 100 + ' % </td></tr>';
@@ -125,8 +128,8 @@ $(document).ready(function(){
 				
 				let profit = round_2_digits(clientPrice - totalCost);
 				
-				$("#totalCost, #print_totalCost").text("Total Cost Price is : $ " + totalCost);
-				$("#clientPrice, #print_clientPrice").text("$ " + clientPrice);
+				$("#totalCost, #print_totalCost").text("Total Cost Price is : $ " + numberWithCommas(totalCost) );
+				$("#clientPrice, #print_clientPrice").text("$ " + numberWithCommas(clientPrice));
 				$("#serial_num").text("S # 0125" + round_zero_decimal_digits(profit) + "00");
 				
 				//$("#profit, #print_profit").text("$ " + profit);
