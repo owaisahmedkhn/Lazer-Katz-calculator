@@ -13,31 +13,44 @@
 <body>
 
 	<div class="container clearboth">
-		<div class="row">
-			<h1 class="text-center">Pricing Calculator</h1>
+		<div class="row price_container top_section">
+			<div class="col-md-4">
+				<img src="images/logo.png" alt="logo" id="logo" class=""/>
+			</div>
+			<div class="col-md-8">
+				<h1 class="text-left" class="">Pricing Calculator</h1>
+			</div>
 		</div>
-	</div>
-	
-	<div class="container">
+		
 		<div class="row price_container">
+
 			<form id="priceCalcForm">
 				<div class="input_field col-md-12">
 					<label>
 						List Price A <span class="red"> * </span>
 					</label>
-					<input type="number" id="list_price_a" class="number_req form-control list_price" placeholder="List Price A" name ="list_price_a" value="" required="required"/>
+					<div class="input_field_n_dollar">
+						<span class="dollar_sign"> $ </span>
+						<input type="text" id="list_price_a" class="number_req form-control list_price" placeholder="List Price A" name ="list_price_a" value="" required="required"/>
+					</div>												
 				</div>
 				<div class="input_field col-md-12">
 					<label>
 						List Price B
 					</label>
-					<input type="number" id="list_price_b" class="number_req form-control list_price" placeholder="List Price B" name ="list_price_b"/>
+					<div class="input_field_n_dollar">
+						<span class="dollar_sign"> $ </span>
+						<input type="text" id="list_price_b" class="number_req form-control list_price" placeholder="List Price B" name ="list_price_b" value=""/>
+					</div>	
 				</div>
 				<div class="input_field col-md-12">
 					<label>
 						List Price C
 					</label>
-					<input type="number" id="list_price_c" class="number_req form-control list_price" placeholder="List Price C" name ="list_price_c"/>
+					<div class="input_field_n_dollar">
+						<span class="dollar_sign"> $ </span>
+						<input type="text" id="list_price_c" class="number_req form-control list_price" placeholder="List Price C" name ="list_price_c" value=""/>
+					</div>	
 				</div>
 		
 				<div class="select_field col-md-12 main_units">
@@ -55,9 +68,11 @@
 						<option name="" value="0.371" data-upcharge="100"> DC cabinetry </option>
 						<option name="" value="0.407" data-upcharge="100"> Executive Cabinet </option>
 						<option name="" value="0.48" data-upcharge="100"> Bernier Cabinet </option>
-						<option name="" value="0.5" data-upcharge="100"> HansKrug </option>
+						<option name="" value="1.0" data-upcharge="100"> HansKrug </option>
 					</select>
-					
+				</div>
+				
+				<div class="select_field col-md-12 main_units">
 					<label>
 						Discount
 					</label>
@@ -72,17 +87,17 @@
 				</div>
 
 				<div class="button_field">
-					<input type="submit" id="price_calc_btn" type="button" class="btn btn-primary" value="calculate">
+					<input type="submit" id="price_calc_btn" type="button" class="btn btn-primary" value="Calculate">
 				</div>
 					
 			</form>	
 			<table class="table table-bordered" id="resultsTable">
 					<tr>
-						<th scope="row" class="thead-dark">Total Price</th>
+						<th scope="row" class="thead-dark">Total Cost Price</th>
 						<td id="totalCost"> - </td>
 					</tr>
 					<tr>
-						<th scope="row" class="thead-dark">Client Price</th>
+						<th scope="row" class="thead-dark">Retail price</th>
 						<td id="clientPrice"> - </td>
 					</tr>
 					<tr>
@@ -91,8 +106,7 @@
 					</tr>
 					<br/>
 					<tr>
-						<td> </td>
-						<td><input type="button" id="cmd" type="button" class="btn btn-primary" value="Print"></td>
+						<td colspan="2"><input type="button" id="cmd" type="button" class="btn btn-primary" value="Print"></td>
 					</tr>
 					
 					
@@ -188,11 +202,11 @@
 		<br/>
 		<table>
 			<tr>
-				<th scope="row" class="thead-dark">Total Price</th>
+				<th scope="row" class="thead-dark">Total Cost Price</th>
 				<td id="print_totalCost"> - </td>
 			</tr>
 			<tr>
-				<th scope="row" class="thead-dark">Client Price</th>
+				<th scope="row" class="thead-dark">Retail price</th>
 				<td id="print_clientPrice"> - </td>
 			</tr>
 			<tr>

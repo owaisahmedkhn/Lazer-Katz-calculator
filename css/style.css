@@ -4,8 +4,18 @@ body{
 	background:#ececec;
 	color:#000;
 }
+.container{
+	padding:20px 0;
+	color:#231f20;
+}
+.top_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	text-align: center;
+}
 .price_container{
-	max-width:400px;
+	max-width:640px;
 	margin:0 auto;
 }
 p,span,a,label,li, input::placeholder{
@@ -15,12 +25,10 @@ p,span,a,label,li, input::placeholder{
 	padding:15px 0;
 }
 input,select{
-	max-width:100%;
-}
-input,select{
     padding: 12px;
 	border-radius:5px;
 	height: auto;
+	max-width:100%;
 }
 input.form-control, select.form-control{
 	height: auto;
@@ -31,15 +39,15 @@ input.form-control, select.form-control{
     margin: 0;
 }
 h1{
-	color:#000;
+	color:#231f20;
 }
 
 label {
     display: inline-block;
     margin-bottom: .5rem;
 	font-weight:bold;
-	padding:0 10px;
     text-align: left;
+	font-size:18px;
 	
 }
 
@@ -70,10 +78,11 @@ td{
 }
 th.thead-dark {
     color: #fff;
-    background-color: #343a40;
-    border-color: #454d55;
+    background-color: #231f20;
     text-align: left;
-	max-width: 100px;
+	max-width: 28px;
+	font-weight:bold;
+	font-size:18px;
 }
 .text-bold{
 	font-weight:bold;
@@ -104,24 +113,26 @@ h1.text-center::after {
     width: 50px;
     display: block;
     height: 2px;
-    border-bottom: 2px solid #bf3131;
+    border-bottom: 2px solid #eb2227;
 }
 h2{
 	text-align:center;
 	font-size:18px;
-	border-top:2px solid #000;
-	border-bottom:2px solid #000;
+	border-top:2px solid #eb2227;
+	border-bottom:2px solid #eb2227;
 	padding:10px 0;
 }
 form{
 	padding:15px 0 25px;
 	margin: 0 auto;
+	width:100%;
 }
 .input_field, .select_field {
 	width: 100%;
     padding: 0;
     margin-bottom: 15px;
 	margin-top: 15px;
+	padding: 7px 0;
 }
 
 .form-control:disabled, .form-control[readonly] {
@@ -131,6 +142,9 @@ form{
     border: 0;
     cursor: not-allowed;
 }
+#logo{
+	max-width:125px;
+}
 select, #cmd{
 	width:100%;
 }
@@ -139,4 +153,44 @@ select, #cmd{
 }
 #editor{
 	display:none;
+}
+/*
+.input_field_calcs div{
+	padding:0;
+}
+*/
+.input_field_calcs input{
+	border:0;
+	border-radius:0;
+}
+.dollar_sign {
+    position: absolute;
+    float: right;
+    max-width: 40px;
+    padding: 0 15px;
+    background: #eb2227;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1px;
+    font-weight: bold;
+    display: inline-block;  
+}
+.input_field_n_dollar input.form-control{
+	padding-left: 50px;
+}
+.input_field_n_dollar input.form-control,.input_field_n_dollar select.form-control,.input_field_n_dollar .dollar_sign{
+	height: 45px;
+	line-height: 45px;
+}
+.btn.btn-primary{
+	padding: 12px 20px;
+    background: #231f20;
+    color: #fff;
+	border:0;
+	border-radius:0;
+	font-weight:bold;
+	font-size:16px;
+}
+.btn.btn-primary:hover{
+	background:#eb2227;
 }
