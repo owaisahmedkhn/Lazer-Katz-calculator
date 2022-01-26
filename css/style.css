@@ -132,10 +132,11 @@ form{
 }
 .input_field, .select_field {
 	width: 100%;
-    padding: 0;
+    /*
     margin-bottom: 15px;
 	margin-top: 15px;
 	padding: 7px 0;
+	*/
 }
 
 .form-control:disabled, .form-control[readonly] {
@@ -168,19 +169,27 @@ select, #cmd{
 }
 .dollar_sign {
     position: absolute;
+	padding: 0 15px;
+	/*
+	color: #fff;
     float: right;
     max-width: 40px;
-    padding: 0 15px;
-    background: #eb2227;
-    color: #fff;
+    
+    background: #eb2227;    
     font-size: 22px;
     line-height: 1px;
     font-weight: bold;
     display: inline-block;  
+	*/
 }
+
+
 .input_field_n_dollar input.form-control{
-	padding-left: 50px;
+	padding-left: 25px;
 	color:#231f20;
+}
+.input_field_n_dollar input.description {
+	padding-left:15px;
 }
 .input_field_n_dollar input.form-control,.input_field_n_dollar select.form-control,.input_field_n_dollar .dollar_sign{
 	height: 45px;
@@ -198,4 +207,51 @@ select, #cmd{
 }
 .btn.btn-primary:hover{
 	background:#eb2227;
+}
+#cmd{
+	background:#eb2227;
+}
+#cmd:hover{
+	background:#eeeeef;
+	color:#000;
+}
+.plus,.minus {
+    border: 0;
+    background: #231f20;
+    color: #fff;
+    font-size: 24px;
+    box-sizing: border-box;
+    font-weight: bold;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 0;
+    padding: 0 12px;
+    cursor: pointer;
+	width: 40px;
+}
+.plus:hover{
+	background: #eb2227;
+}
+.minus{
+    background: #eb2227;
+}
+.minus:hover{
+	background: #231f20;
+}
+#resultsTable {
+    /*display: table;*/
+    width: auto;
+    min-width: 320px;
+    margin: 0 auto;
+}
+#resultsTable .retail td {
+    font-size: 18px;
+    font-weight: bold;
+	background:#231f20;
+	color:#fff;
+}
+.thead-dark{
+	color:#fff;
+	background:#231f20;
+	border-right:1px solid #ececec;
 }
