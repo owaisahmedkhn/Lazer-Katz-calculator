@@ -106,7 +106,7 @@ div#container_rows {
 h1{
 	margin: 10px auto;
 }
-h1.text-center::after {
+h1::after {
     text-align: center;
     content: ' ';
     margin: 12px auto 0;
